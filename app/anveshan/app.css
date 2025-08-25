@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Add custom layers if needed */
+@theme {
+  --color-primary: #9747FF;
+  --color-secondary: #A185FE;
+  --color-accent: #00FDFF;
+}
+
+/* Background like your Figma design */
+body {
+  margin: 0;
+  color: white;
+  background:#9747FF
+
+}
