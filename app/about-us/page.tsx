@@ -5,7 +5,7 @@ export default function AboutUs(){
     return(
         <section className={styles.aboutUsContainer}>
            <div className={styles.imageSection}>
-              <img src="https://mntcnitdgp.co.in/images/about.jpg" alt="About us image section" />
+              <img src="/images/mntcaboutus.jpg" alt="About us image section" />
 </div>
            <div className={styles.textSection}>
               <h2>About <span className={styles.highlightText}>Us</span></h2>
