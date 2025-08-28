@@ -150,7 +150,7 @@ export default function Events() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen bg-[url('/IMAGES/page.png')] bg-cover bg-center bg-no-repeat text-white p-6">
       {/* Title */}
       <div className="text-center mb-16 mt-16">
         <h1 className="text-6xl font-extrabold">
