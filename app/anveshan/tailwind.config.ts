@@ -1,8 +1,10 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -11,7 +13,7 @@ export default {
         accent: "#00FDFF",
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"], // 👈 this line
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },
