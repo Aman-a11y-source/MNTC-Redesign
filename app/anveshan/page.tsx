@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AnveshanPage() {
   return (
     <main
@@ -13,8 +15,8 @@ export default function AnveshanPage() {
           
           {/* Left: Anveshan Image */}
           <div className="flex justify-center lg:justify-start lg:-ml-6">
-            <img
-              src="anveshan/Group 1.png"  
+            <Image width={1920} height={600}
+              src="/anveshan/Group 1.png"  
               alt="Anveshan Magazine"
               className="w-[85%] sm:w-[70%] md:w-[596px] md:h-[719px] lg:w-[620px] xl:w-[650px] object-contain"
             />

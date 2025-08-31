@@ -1,12 +1,15 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Home() {
   return (
-    <div className="bg-[#0f0f0f] text-white min-h-screen w-full relative overflow-hidden">
+    <div className="bg-[url('/home/bg.png')] text-white min-h-screen w-full relative overflow-hidden">
       {/*section1*/}
-      <section className="flex flex-col items-center justify-center py-24 relative">
+      <section className="flex flex-col items-center justify-center py-10 relative">
         
-        <img src="/images/rocket.png" alt="Rocket" className="w-100% mb-10" />
+        <div>
+          <Image src="/home/rocket.png" alt="Rocket" className="w-full mb-10" width={1920} height={600}/>
+        </div>
 
         
       </section>
@@ -16,8 +19,8 @@ export default function Home() {
     
         <div className="pt-30">
         <div className="mt-150">
-        <img
-          src="/images/who are we shape.png"
+        <Image width={1920} height={600}
+          src="/home/who are we shape.png"
           alt="Semi circular rings"
           className="hidden md:block absolute left-0 bottom-1 w-60 opacity-90"
         /> </div>
@@ -44,7 +47,7 @@ export default function Home() {
 
         
         <div className="md:w-4/5 flex justify-center mt-20 md:mt-0 z-10">
-          <img src="/images/question vector.png" alt="Who are we illustration" className="w-72 lg:w-100" />
+          <Image width={1920} height={600} src="/home/question vector.png" alt="Who are we illustration" className="w-72 lg:w-100" />
         </div>
       </section>
 
@@ -52,8 +55,8 @@ export default function Home() {
       <section className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20">
         
         <div className="md:w-2/5 flex justify-center items-start mt-70">
-          <img
-            src="/images/team.png"
+          <Image width={1920} height={600}
+            src="/home/team.png"
             alt="People with graph illustration"
             className="w-full max-w-xl mx-auto"
           />
@@ -80,7 +83,7 @@ export default function Home() {
 
       
       <div className="absolute bottom-0 right-10 mb-1">
-        <img src="/images/meet the people shape.png" alt="Decorative bottom design" className="w-100" />
+        <Image width={1920} height={600} src="/home/meet the people shape.png" alt="Decorative bottom design" className="w-100" />
       </div>
     </div>
   );

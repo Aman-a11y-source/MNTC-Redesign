@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Events() {
   const events = [
     {
@@ -187,7 +189,7 @@ export default function Events() {
                 >
                   {/* Image */}
                   {item.image && (
-                    <img
+                    <Image width={1920} height={600}
                       src={item.image}
                       alt={item.title}
                       className="w-48 h-48 object-cover rounded-xl shadow-md"

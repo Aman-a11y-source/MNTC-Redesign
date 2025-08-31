@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './about-us.module.css'
 
 
@@ -5,7 +6,7 @@ export default function AboutUs(){
     return(
         <section className={styles.aboutUsContainer}>
            <div className={styles.imageSection}>
-              <img src="/about-us/mntcaboutus.jpg" alt="About us image section" />
+              <Image src="/about-us/mntcaboutus.jpg" alt="About us image section" width={1920} height={600}/>
 </div>
            <div className={styles.textSection}>
               <h2>About <span className={styles.highlightText}>Us</span></h2>
@@ -14,7 +15,7 @@ export default function AboutUs(){
               </p>
               
               <p>
-                Our club was set up with the aim of creating a platform that helps in stimulating passion for mathematics and interest in the technology, of today's world. At Maths N Tech Club, we understand the importance of analytical reasoning and rational thinking. Hence, we organise a plethora of events throughout the year that aims at reinvigorating the seemingly dormant passion for mathematics and the thirst for knowledge about today's technology.
+                Our club was set up with the aim of creating a platform that helps in stimulating passion for mathematics and interest in the technology, of today&apos;s world. At Maths N Tech Club, we understand the importance of analytical reasoning and rational thinking. Hence, we organise a plethora of events throughout the year that aims at reinvigorating the seemingly dormant passion for mathematics and the thirst for knowledge about today&apos;s technology.
               </p>
               
               <p>
