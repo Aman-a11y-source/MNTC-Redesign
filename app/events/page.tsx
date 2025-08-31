@@ -17,7 +17,7 @@ export default function Events() {
           title: "Stock Market Workshop",
           date: "Jan 29, 2023",
           description:
-            "Do you ever imagine yourself as a star in the markets of the Stock Exchange and reaping sumptuous?\nIsn't it worth it to be the one, to be the billionaires?",
+            "Do you ever imagine yourself as a star investor ruling the markets of the Stock Exchange and reaping sumptuous? Isn't it worth it to take a chance to be the one, to be the billionaires?",
           image: "/IMAGES/STOCK MARKET.png",
           link: "#",
         },
@@ -150,18 +150,25 @@ export default function Events() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white p-6">
-      {/* Title */}
+    <div className="min-h-screen bg-[url('/IMAGES/page.png')] bg-cover bg-center bg-no-repeat text-white p-6">
+      {/* Page Title */}
       <div className="text-center mb-16 mt-16">
-        <h1 className="text-6xl font-extrabold">
-          Events Round The <span className="text-purple-400">Calendar</span>
+        <h1
+          className="text-[70px] font-bold leading-none tracking-normal text-center"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
+          Events Round The <span style={{ color: "#A185FE" }}>Calendar</span>
         </h1>
       </div>
 
       {/* Events */}
       {events.map((section, id) => (
         <div key={id} className="p-6">
-          <h2 className="text-4xl font-bold text-center text-white mb-8">
+          {/* Category Heading */}
+          <h2
+            className="text-[50px] font-bold leading-none tracking-normal text-center mb-8"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
             {section.category}
           </h2>
 
@@ -174,9 +181,9 @@ export default function Events() {
               return (
                 <div
                   key={index}
-                  className={`p-6 flex flex-col md:flex-row gap-6 items-center transition-transform duration-300 hover:scale-105 ${isLastOdd ? "md:col-span-2 md:mx-auto md:w-1/2" : ""
-                    }`}
-
+                  className={`p-6 flex flex-col md:flex-row gap-6 items-center transition-transform duration-300 hover:scale-105 ${
+                    isLastOdd ? "md:col-span-2 md:mx-auto md:w-1/2" : ""
+                  }`}
                 >
                   {/* Image */}
                   {item.image && (
@@ -189,16 +196,41 @@ export default function Events() {
 
                   {/* Description */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-1">
+                    {/* Event Name */}
+                    <h3
+                      className="text-[30px] font-bold leading-none tracking-normal mb-1 text-left"
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                    >
                       {item.title}
                     </h3>
-                    <p className="text-sm text-blue-300 mb-4">{item.date}</p>
-                    <p className="text-sm mb-2 whitespace-pre-line">
+
+                    {/* Event Date */}
+                    <p
+                      className="text-[15px] leading-none tracking-normal mb-4 text-left"
+                      style={{
+                        fontFamily: "Montserrat, sans-serif",
+                        color: "#00FFDF",
+                      }}
+                    >
+                      {item.date}
+                    </p>
+
+                    {/* Event Description */}
+                    <p
+                      className="text-[15px] leading-normal tracking-normal mb-2 whitespace-pre-line text-left"
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                    >
                       {item.description}
                     </p>
+
+                    {/* Learn More Link */}
                     <a
                       href={item.link}
-                      className="text-blue-400 hover:underline text-sm"
+                      className="text-[15px] hover:underline text-left"
+                      style={{
+                        fontFamily: "Montserrat, sans-serif",
+                        color: "#00FFDF",
+                      }}
                     >
                       Learn More &gt;
                     </a>
