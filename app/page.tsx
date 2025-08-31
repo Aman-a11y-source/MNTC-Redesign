@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function App() {
+export default function Home() {
   return (
     <div className="bg-[#0f0f0f] text-white min-h-screen w-full relative overflow-hidden">
       {/*section1*/}
@@ -85,4 +85,3 @@ export default function App() {
     </div>
   );
 }
-
