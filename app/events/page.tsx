@@ -10,7 +10,7 @@ export default function Events() {
           date: "Jan 20, 2024",
           description:
             "Ever wondered how to create digital media from scratch using software?\nWant to broaden your horizons by communicating through visual concepts?",
-          image: "/IMAGES/GD-WORKSHOP.png",
+          image: "/events/GD-WORKSHOP.png",
           link: "#",
         },
         {
@@ -18,7 +18,7 @@ export default function Events() {
           date: "Jan 29, 2023",
           description:
             "Do you ever imagine yourself as a star investor ruling the markets of the Stock Exchange and reaping sumptuous? Isn't it worth it to take a chance to be the one, to be the billionaires?",
-          image: "/IMAGES/STOCK MARKET.png",
+          image: "/events/STOCK MARKET.png",
           link: "#",
         },
       ],
@@ -31,7 +31,7 @@ export default function Events() {
           date: "Mar 14, 2024",
           description:
             "Are you brimming with ideas to address the common real world problems and revolutionize the field of solutions?! IDEATION is an offline team-based event wheres participant in a team come together to present solution on various real life problem.",
-          image: "/IMAGES/IDEATHON-2.0.png",
+          image: "/events/IDEATHON-2.0.png",
           link: "#",
         },
       ],
@@ -44,7 +44,7 @@ export default function Events() {
           date: "Jan 30, 2023",
           description:
             "Embrace yourselves as we present to you, StockBit. A five day Stock Market simulation. Invest fake money and see if you're able to predict the movement of stocks.",
-          image: "/IMAGES/STOCK BIT.png",
+          image: "/events/STOCK BIT.png",
           link: "#",
         },
         {
@@ -52,7 +52,7 @@ export default function Events() {
           date: "Dec 23, 2023",
           description:
             "Get ready to embark on a journey of innovation, inspiration, and interaction! We at Maths N Tech Club are thrilled to be back with our latest event MERGERS ALLIANCE 2.0 where you not only get a chance to showcase your entrepreneurial spirit",
-          image: "/IMAGES/MERGERS.png",
+          image: "/events/MERGERS.png",
           link: "#",
         },
       ],
@@ -65,7 +65,7 @@ export default function Events() {
           date: "Oct 16, 2022",
           description:
             "Maths N Tech Club is soon bringing to you all, the first ever version of 'Campusudo', an offline intrepid hunting game, that will have your brains engaged in mind boggling assumptions and leave you craving for more.",
-          image: "/IMAGES/CAMPUSUDO.png",
+          image: "/events/CAMPUSUDO.png",
           link: "#",
         },
         {
@@ -73,7 +73,7 @@ export default function Events() {
           date: "Feb 25, 2024",
           description:
             "Just like a vector, the magnitude is not the only thing that matters in Brain Darts .As you witness your scores run riot, just by a correct sense of direction!!!Miss and see yourself fall behind on the leaderboad. Hit and you’ll see yourself reach the pinnacle!!!And, as you decide amongst yourselves who has the better aim, Team Aavishkar presents before you BRAIN DARTS! Can you aim for the eye… Arjuna?",
-          image: "/IMAGES/BRAINDARTS.png",
+          image: "/events/BRAINDARTS.png",
           link: "#",
         },
       ],
@@ -86,7 +86,7 @@ export default function Events() {
           date: "Apr 9, 2024",
           description:
             "Do you pose a keen desire to explore the unknown? We feel you, Master Snow. The Night's Watch is definitely not your place. Last Aarohan, MNTC organized the annual edition of the prolific treasure hunt, TERRORIST TAKEDOWN! As one reached out to the east of Essos and to the west of Westeros, each careful step unraveled a series of mysteries",
-          image: "/IMAGES/TT.png",
+          image: "/events/TT.png",
           link: "#",
         },
         {
@@ -94,7 +94,7 @@ export default function Events() {
           date: "Apr 10, 2024",
           description:
             "Is adrenaline rush what you crave for whilst cracking codes? Fascinated by outlandish and bizarre cyphers, eh? This Aarohan, Team Aavishkar brings to you KRYPTIC, to put your crypto-hungry soul to rest. Delve deeper into this enigmatic World of Cryptology, sail through the labyrinthine trail of codes and decipher them to climb up to the pinnacle",
-          image: "/IMAGES/KRYPTIC.png",
+          image: "/events/KRYPTIC.png",
           link: "#",
         },
         {
@@ -102,7 +102,7 @@ export default function Events() {
           date: "Apr 8, 2024",
           description:
             "This Aarohan relive those adrenaline packed days of family game nights, those same tears of defeat, the roars of success and the incessant praying for the dice to roll in your favour! Team Aavishkar brings to you the chance of travelling down the memory lane, with twist of numbers and logic: MATRIX",
-          image: "/IMAGES/MATRIX.png",
+          image: "/events/MATRIX.png",
           link: "#",
         },
         {
@@ -110,7 +110,7 @@ export default function Events() {
           date: "Apr 8, 2024",
           description:
             "Will you be excited to hear that we are back again with an enthralling opportunity to unleash the hidden detective inside of you?",
-          image: "/IMAGES/COS.png",
+          image: "/events/COS.png",
           link: "#",
         },
         {
@@ -118,7 +118,7 @@ export default function Events() {
           date: "Apr 9, 2024",
           description:
             "Have you ever thought of playing football online rather than going to the field?,This Aarohan, Team Aavishkar brings to you DARWINIA, a football match for all the soccer enthusiasts out there, with numerous twists and turns.",
-          image: "/IMAGES/DARWINIA.png",
+          image: "/events/DARWINIA.png",
           link: "#",
         },
         {
@@ -126,7 +126,7 @@ export default function Events() {
           date: "Apr 8, 2024",
           description:
             "Because Team Aavishkar is bringing to you an astonishing game of thrill and delight through HOUSE OF CUPS. Form your houses and protect them from demolition.",
-          image: "/IMAGES/HOUSE-OF-CUPS.png",
+          image: "/events/HOUSE-OF-CUPS.png",
           link: "#",
         },
         {
@@ -134,7 +134,7 @@ export default function Events() {
           date: "Apr 10, 2024",
           description:
             "Are you ready to test your financial acumen and strategic thinking? Welcome to Portfolio Venture, an exciting game hosted by our Maths N Tech Club that puts your investment skills to the ultimate test !! The goal?",
-          image: "/IMAGES/PORTFOLIO.png",
+          image: "/events/PORTFOLIO.png",
           link: "#",
         },
         {
@@ -142,7 +142,7 @@ export default function Events() {
           date: "Apr 10, 2024",
           description:
             "Do you remember how much fun it was to watch those game shows with your family back in the day? Those enjoyable, heartwarming, and humorous games.",
-          image: "/IMAGES/COT.png",
+          image: "/events/COT.png",
           link: "#",
         },
       ],
@@ -150,7 +150,7 @@ export default function Events() {
   ];
 
   return (
-    <div className="min-h-screen bg-[url('/IMAGES/page.png')] bg-cover bg-center bg-no-repeat text-white p-6">
+    <div className="min-h-screen bg-[url('/events/bg.png')] bg-cover bg-center bg-no-repeat text-white p-6">
       {/* Page Title */}
       <div className="text-center mb-16 mt-16">
         <h1

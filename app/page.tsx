@@ -1,22 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-
 export default function Home() {
   return (
 
     <div
       className="min-h-screen bg-fixed bg-no-repeat bg-cover overflow-y-scroll"
       style={{
-        backgroundImage: "url('../public/images/desktop.png')",
+        backgroundImage: "url('/home/desktop.png')",
       }}>
         <h1 className="absolute top-10 text-3xl md:text-4xl font-bold">
         Maths <span className="text-purple-400">N</span> Tech Club
@@ -48,13 +36,13 @@ export default function Home() {
           </div>
           <div className="hidden lg:flex items-center justify-center fixed right-0 top-0 h-screen w-1/2">
             <img
-            src="../public/images/question vector.png"
+            src="../public/home/question vector.png"
             alt="who are we"
             className="max-h-[80%] object-contain"
             />
           </div>
           <div className="absolute left-0 top-0">
-            <img src="../public/images/who are we shape.png" 
+            <img src="../public/home/who are we shape.png" 
             alt="who we are vector" 
             className="w-32 h-32 object-contain" />
           </div>
@@ -66,14 +54,14 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
           <div className="absolute left-0 top-1/2 -translate-y-1/2">
             <img 
-            src="../public/images/team.png" 
+            src="../public/home/team.png" 
             alt="team" 
             className="w-40 h-auto object-contain" 
             />
           </div>
           <div className="absolute right-0 top-2/3 -translate-y-1/2">
             <img 
-            src="../public/images/meet the people shape.png" 
+            src="../public/home/meet the people shape.png" 
             alt="meet the team" 
             className="w-40 h-auto object-contain" 
             />

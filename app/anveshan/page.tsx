@@ -3,7 +3,7 @@ export default function AnveshanPage() {
     <main
       className="min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('anveshan1/bg.png')", // ✅ put bg.png inside /public
+        backgroundImage: "url('anveshan/bg.png')", // ✅ put bg.png inside /public
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -14,7 +14,7 @@ export default function AnveshanPage() {
           {/* Left: Anveshan Image */}
           <div className="flex justify-center lg:justify-start lg:-ml-6">
             <img
-              src="anveshan1/Group 1.png"  
+              src="anveshan/Group 1.png"  
               alt="Anveshan Magazine"
               className="w-[85%] sm:w-[70%] md:w-[596px] md:h-[719px] lg:w-[620px] xl:w-[650px] object-contain"
             />
@@ -44,7 +44,7 @@ export default function AnveshanPage() {
 
             {/* Download Button */}
            <a
-  href="anveshan1/Anveshan_2025.pdf"   
+  href="anveshan/Anveshan_2025.pdf"   
   target="_blank"
   rel="noopener noreferrer"
   className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full bg-[#A185FE] text-white text-base md:text-lg lg:text-xl font-medium
