@@ -70,19 +70,7 @@ export default function AnveshanPage() {
       </section>
 
 
-      <style jsx global>{`
-        .perspective-container {
-          perspective: 1500px;
-        }
-        .transform-3d {
-          transform: rotateY(-18deg) rotateX(10deg) rotateZ(-3deg);
-          transform-style: preserve-3d;
-        }
-        .hover-reset:hover {
-          transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 255, 223, 0.25);
-        }
-      `}</style>
+
     </main>
   );
 }
