@@ -44,7 +44,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: '/images/memories/memory1.jpg',
+      image: '/images/memories/memory1.jpeg',
       title: 'Seniors Farewell',
       subtitle: 'Class of 2024',
       handle: '@mntcnitdgp',
@@ -53,7 +53,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: ''
     },
     {
-      image: '/images/memories/memory2.jpg',
+      image: '/images/memories/memory2.jpeg',
       title: 'Freshers Orientation',
       subtitle: 'Welcome Batch 2027',
       handle: '@mntcnitdgp',
@@ -62,7 +62,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: ''
     },
     {
-      image: '/images/memories/memory3.jpg',
+      image: '/images/memories/memory3.jpeg',
       title: 'Aarohan Fest',
       subtitle: 'Organizing Committee',
       handle: '@mntcnitdgp',
@@ -71,7 +71,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: ''
     },
     {
-      image: '/images/memories/memory4.jpg',
+      image: '/images/memories/memory4.jpeg',
       title: 'Coding Bootcamp',
       subtitle: 'Technical Session',
       handle: '@mntcnitdgp',
@@ -80,7 +80,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: ''
     },
     {
-      image: '/images/memories/memory5.jpg',
+      image: '/images/memories/memory5.jpeg',
       title: 'Core Team Meet',
       subtitle: 'Session planning',
       handle: '@mntcnitdgp',
@@ -89,7 +89,7 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: ''
     },
     {
-      image: '/images/memories/memory6.jpg',
+      image: '/images/memories/memory6.jpeg',
       title: 'Alumni Gathering',
       subtitle: 'Networking Meet',
       handle: '@mntcnitdgp',
