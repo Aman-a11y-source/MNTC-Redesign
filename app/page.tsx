@@ -96,13 +96,13 @@ export default function Home() {
 
             <a 
               href="/about" 
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-cyan bg-cyan-500/5 hover:bg-cyan-500/15"
+              className="hidden lg:inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-cyan bg-cyan-500/5 hover:bg-cyan-500/15"
             >
               Know More About Us
             </a>
           </div>
 
-          <div className="flex-1 flex justify-center z-10">
+          <div className="flex-1 flex flex-col items-center justify-center z-10 gap-8">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#00FFDF] to-[#7C3AED] rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative px-8 py-10 bg-[#0e0d19]/95 rounded-3xl border border-white/5 flex justify-center items-center">
@@ -115,6 +115,13 @@ export default function Home() {
                 />
               </div>
             </div>
+            
+            <a 
+              href="/about" 
+              className="inline-flex lg:hidden items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-cyan bg-cyan-500/5 hover:bg-cyan-500/15"
+            >
+              Know More About Us
+            </a>
           </div>
 
         </div>
@@ -124,7 +131,7 @@ export default function Home() {
       <section className="relative max-w-7xl mx-auto px-6 py-12 md:py-20 z-10">
         <div className="glass-panel p-8 md:p-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
           
-          <div className="flex-1 flex justify-center z-10">
+          <div className="flex-1 flex flex-col items-center justify-center z-10 gap-8">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#7C3AED] to-[#00FFDF] rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative px-8 py-10 bg-[#0e0d19]/95 rounded-3xl border border-white/5 flex justify-center items-center">
@@ -137,6 +144,13 @@ export default function Home() {
                 />
               </div>
             </div>
+
+            <a 
+              href="/team" 
+              className="inline-flex lg:hidden items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-purple bg-purple-500/5 hover:bg-purple-500/15 text-center"
+            >
+              Meet the people making it happen
+            </a>
           </div>
 
           <div className="flex-1 text-right z-10 flex flex-col items-end">
@@ -154,7 +168,7 @@ export default function Home() {
 
             <a 
               href="/team" 
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-purple bg-purple-500/5 hover:bg-purple-500/15"
+              className="hidden lg:inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 cursor-target neon-border-purple bg-purple-500/5 hover:bg-purple-500/15"
             >
               Meet the people making it happen
             </a>
