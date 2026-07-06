@@ -344,52 +344,52 @@ export default function Home() {
         <div ref={trackRef} className="flex flex-row flex-nowrap h-screen items-center" style={{ width: "300vw" }}>
           
           {/* Pillar 1 */}
-          <div className="w-screen h-full flex flex-col justify-center items-center px-8 md:px-24 text-center lg:text-left lg:flex-row gap-12 select-none relative bg-[#07060b]">
+          <div className="w-screen h-full flex flex-col justify-center items-center px-6 md:px-24 text-center lg:text-left lg:flex-row gap-6 lg:gap-12 select-none relative bg-[#07060b]">
             <div className="absolute inset-0 opacity-5 pointer-events-none flex justify-center items-center overflow-hidden">
               <span className="text-[40vw] font-bold text-[#00FFDF] select-none">π</span>
             </div>
-            <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
-              <span className="text-sm font-bold tracking-widest text-[#00FFDF] uppercase mb-4">PILLAR 01</span>
-              <h2 className="text-4xl md:text-6xl font-black font-space-grotesk text-white mb-6 uppercase">Mathematics & logic</h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+            <div className="flex-0 lg:flex-1 flex flex-col justify-center z-10 max-w-xl">
+              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#00FFDF] uppercase mb-2 lg:mb-4">PILLAR 01</span>
+              <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black font-space-grotesk text-white mb-3 lg:mb-6 uppercase">Mathematics & logic</h2>
+              <p className="text-gray-400 text-xs sm:text-base lg:text-lg leading-relaxed mb-4 lg:mb-8">
                 At our core, we explore the deep beauty of mathematics. From statistical modeling and game theory to complex quantitative ciphers and logical analysis, we cultivate the skills required to unlock numerical secrets.
               </p>
             </div>
-            <div className="flex-1 flex justify-center items-center z-10 max-w-md">
+            <div className="hidden lg:flex flex-1 justify-center items-center z-10 max-w-md">
               <div className="text-9xl font-black font-space-grotesk text-cyan-500/25 tracking-tighter select-none">MATHS</div>
             </div>
           </div>
 
           {/* Pillar 2 */}
-          <div className="w-screen h-full flex flex-col justify-center items-center px-8 md:px-24 text-center lg:text-left lg:flex-row gap-12 select-none relative bg-[#09080e]">
+          <div className="w-screen h-full flex flex-col justify-center items-center px-6 md:px-24 text-center lg:text-left lg:flex-row gap-6 lg:gap-12 select-none relative bg-[#09080e]">
             <div className="absolute inset-0 opacity-5 pointer-events-none flex justify-center items-center overflow-hidden">
               <span className="text-[30vw] font-mono text-[#7C3AED] select-none">&lt;/&gt;</span>
             </div>
-            <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
-              <span className="text-sm font-bold tracking-widest text-[#7C3AED] uppercase mb-4">PILLAR 02</span>
-              <h2 className="text-4xl md:text-6xl font-black font-space-grotesk text-white mb-6 uppercase">Technology & Code</h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+            <div className="flex-0 lg:flex-1 flex flex-col justify-center z-10 max-w-xl">
+              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#7C3AED] uppercase mb-2 lg:mb-4">PILLAR 02</span>
+              <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black font-space-grotesk text-white mb-3 lg:mb-6 uppercase">Technology & Code</h2>
+              <p className="text-gray-400 text-xs sm:text-base lg:text-lg leading-relaxed mb-4 lg:mb-8">
                 We design and build modern software architectures. Through clean development practices, web structures, quantitative toolchains, and algorithmic challenges, we turn ideas into live products.
               </p>
             </div>
-            <div className="flex-1 flex justify-center items-center z-10 max-w-md">
+            <div className="hidden lg:flex flex-1 justify-center items-center z-10 max-w-md">
               <div className="text-9xl font-black font-space-grotesk text-purple-500/25 tracking-tighter select-none">CODE</div>
             </div>
           </div>
 
           {/* Pillar 3 */}
-          <div className="w-screen h-full flex flex-col justify-center items-center px-8 md:px-24 text-center lg:text-left lg:flex-row gap-12 select-none relative bg-[#07060b]">
+          <div className="w-screen h-full flex flex-col justify-center items-center px-6 md:px-24 text-center lg:text-left lg:flex-row gap-6 lg:gap-12 select-none relative bg-[#07060b]">
             <div className="absolute inset-0 opacity-5 pointer-events-none flex justify-center items-center overflow-hidden">
               <span className="text-[35vw] font-bold text-[#FF007A] select-none">🎨</span>
             </div>
-            <div className="flex-1 flex flex-col justify-center z-10 max-w-xl">
-              <span className="text-sm font-bold tracking-widest text-[#FF007A] uppercase mb-4">PILLAR 03</span>
-              <h2 className="text-4xl md:text-6xl font-black font-space-grotesk text-white mb-6 uppercase">Design & Media</h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
+            <div className="flex-0 lg:flex-1 flex flex-col justify-center z-10 max-w-xl">
+              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#FF007A] uppercase mb-2 lg:mb-4">PILLAR 03</span>
+              <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black font-space-grotesk text-white mb-3 lg:mb-6 uppercase">Design & Media</h2>
+              <p className="text-gray-400 text-xs sm:text-base lg:text-lg leading-relaxed mb-4 lg:mb-8">
                 Creativity powers our execution. We design premium branding guidelines, visual layouts, websites, and user interfaces that tell compelling interactive stories and engage our audience.
               </p>
             </div>
-            <div className="flex-1 flex justify-center items-center z-10 max-w-md">
+            <div className="hidden lg:flex flex-1 justify-center items-center z-10 max-w-md">
               <div className="text-9xl font-black font-space-grotesk text-pink-500/25 tracking-tighter select-none">DESIGN</div>
             </div>
           </div>
