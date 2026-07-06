@@ -3,7 +3,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-auto-rows: auto;
   justify-content: center;
   gap: 1.5rem;
@@ -19,8 +19,8 @@
 
 @media (max-width: 1124px) {
   .chroma-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
     padding: 0.5rem;
   }
 }
@@ -36,18 +36,27 @@
 .chroma-card {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   background: var(--card-gradient);
   backdrop-filter: blur(12px);
-  padding: 12px;
+  padding: 16px;
+  gap: 1.25rem;
 
   --mouse-x: 50%;
   --mouse-y: 50%;
   --spotlight-color: rgba(124, 58, 237, 0.15);
+}
+
+@media (max-width: 480px) {
+  .chroma-card {
+    padding: 12px;
+    gap: 1rem;
+  }
 }
 
 .chroma-card:hover {
@@ -74,47 +83,62 @@
 .chroma-img-wrapper {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 250px;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
   box-sizing: border-box;
   background: transparent;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .chroma-img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.chroma-card:hover .chroma-img-wrapper {
+  border-color: var(--card-border);
 }
 
 .chroma-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
-  border-radius: 12px;
+  object-position: center 20%;
+  border-radius: 50%;
   display: block;
   transition: transform 0.5s ease;
 }
 
 .chroma-card:hover .chroma-img-wrapper img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .chroma-info {
   position: relative;
   z-index: 1;
-  padding: 1rem 0.5rem 0.5rem;
+  padding: 0;
   color: #fff;
   font-family: inherit;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .chroma-text-details {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .chroma-info .name {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
   color: #fff;
