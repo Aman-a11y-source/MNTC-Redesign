@@ -2,17 +2,16 @@
 
 /**
  * TransitionLink
- * Drop-in replacement for <Link> that fires the close animation BEFORE
- * calling router.push(), so the sequence is:
- *   click → panels slide IN (close) → navigate → panels slide OUT (open)
+ * Intercepts navigation to run the close-curtain animation before pushing the new page route.
+ * timings are synchronized to let the logo reveal completely, pause for readability, and then open.
  */
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import React from "react";
 
-export const CLOSE_MS = 520;  // panels slide IN
-export const HOLD_MS  = 140;  // brief hold at centre
-export const OPEN_MS  = 520;  // panels slide OUT — same duration as close
+export const CLOSE_MS = 650;  // curtains slide IN (0.65s)
+export const HOLD_MS  = 950;  // hold for logo reveal & pause (0.95s)
+export const OPEN_MS  = 650;  // curtains slide OUT (0.65s)
 
 interface Props {
   href: string;
@@ -20,7 +19,6 @@ interface Props {
   className?: string;
   "aria-label"?: string;
   "data-index"?: number | string;
-  /** Called synchronously on click (e.g. close the menu) before transition starts */
   onBeforeNavigate?: () => void;
   style?: React.CSSProperties;
 }
@@ -32,17 +30,22 @@ export default function TransitionLink({
   ...rest
 }: Props) {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    // 1. close the menu (or any other pre-nav cleanup)
     onBeforeNavigate?.();
 
-    // 2. fire the custom event so PageTransition starts the CLOSE animation
+    const normCurrent = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+    const normTarget = href.endsWith("/") ? href.slice(0, -1) : href;
+    
+    if ((normCurrent || "/") === (normTarget || "/")) {
+      return;
+    }
+
     window.dispatchEvent(new CustomEvent("pt:close"));
 
-    // 3. after the close animation finishes + hold, actually navigate
     setTimeout(() => {
       router.push(href);
     }, CLOSE_MS + HOLD_MS);

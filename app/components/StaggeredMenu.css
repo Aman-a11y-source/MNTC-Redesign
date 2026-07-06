@@ -21,7 +21,11 @@
   padding: 0 40px;
   z-index: 1010;
   pointer-events: auto;
-  background: #08070d;
+  background: rgba(13, 11, 28, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {

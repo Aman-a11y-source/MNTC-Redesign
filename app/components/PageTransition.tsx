@@ -1,18 +1,15 @@
 "use client";
 
 /**
- * PageTransition — Camera-lens iris wipe (v3, correct sequence)
+ * PageTransition — Cinematic Centered "I" Reveal (v8)
  *
  * Sequence:
- *  1. User clicks a TransitionLink → "pt:close" event fires
- *  2. Panels slide IN from sides (CLOSE_MS) → "closing"
- *  3. Panels meet at centre (HOLD_MS) → "closed"  [MNTC logo flash]
- *  4. router.push() fires in TransitionLink after CLOSE_MS + HOLD_MS
- *  5. usePathname() detects new route → "opening"
- *  6. Panels retract back to off-screen (OPEN_MS) → "idle"
- *
- * Panels always live in the DOM at their off-screen position;
- * CSS transitions do the heavy lifting — zero JS animation loop.
+ *  1. Left and right curtains slide IN (CLOSE_MS = 650ms).
+ *  2. At 650ms, phase becomes "closed", logo is rendered and plays its 0.95s animation.
+ *     - Bars meet, touch, split apart to outline the text.
+ *     - "MNTC" is revealed in the center and held for readability (300ms static glow).
+ *  3. At 1600ms (650ms + 950ms), route navigation triggers.
+ *  4. Pathname changes, phase becomes "opening", curtains slide open (OPEN_MS = 650ms).
  */
 
 import { usePathname } from "next/navigation";
@@ -21,7 +18,6 @@ import { CLOSE_MS, HOLD_MS, OPEN_MS } from "./TransitionLink";
 
 type Phase = "idle" | "closing" | "closed" | "opening";
 
-/* Same easing for both directions — professional, symmetrical */
 const EASE = "cubic-bezier(0.76, 0, 0.24, 1)";
 const BG   = "#08070d";
 
@@ -36,7 +32,6 @@ export default function PageTransition() {
     _setPhase(p);
   };
 
-  /* ── Listen for the CLOSE event fired by TransitionLink ──────────── */
   useEffect(() => {
     const onClose = () => {
       setPhase("closing");
@@ -46,33 +41,21 @@ export default function PageTransition() {
     return () => window.removeEventListener("pt:close", onClose);
   }, []);
 
-  /* ── On pathname change, play the OPEN animation ─────────────────── */
   useEffect(() => {
     if (firstRender.current) { firstRender.current = false; return; }
 
-    /* Small rAF delay ensures the new page has rendered and
-       the panels are sitting at their "closed" (center) position
-       before we start the open transition */
     const raf = requestAnimationFrame(() => {
       setPhase("opening");
       setTimeout(() => setPhase("idle"), OPEN_MS);
     });
 
     return () => cancelAnimationFrame(raf);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
-
-  /* ── Panel positions ─────────────────────────────────────────────── */
-  // idle    → off-screen (left: -101%, right: 101%)
-  // closing → sliding to centre (0%)
-  // closed  → at centre (0%)
-  // opening → sliding back off-screen
 
   const atCenter  = phase === "closing" || phase === "closed";
   const leftX     = atCenter ? "0%"    : "-101%";
   const rightX    = atCenter ? "0%"    :  "101%";
 
-  // Apply transition only when actually moving
   const isMoving  = phase === "closing" || phase === "opening";
   const duration  = phase === "opening" ? `${OPEN_MS}ms` : `${CLOSE_MS}ms`;
   const trans     = isMoving ? `transform ${duration} ${EASE}` : "none";
@@ -89,6 +72,79 @@ export default function PageTransition() {
         overflow: "hidden",
       }}
     >
+      <style>{`
+        .pt-logo-wrapper {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none;
+        }
+
+        .pt-logo-inner {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 260px;
+          height: 80px;
+        }
+
+        .pt-bar {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 900;
+          font-size: 3.2rem;
+          color: #00FFDF;
+          position: absolute;
+          line-height: 1;
+          will-change: transform;
+        }
+
+        .pt-bar-left {
+          animation: bar-left-anim 0.95s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        }
+
+        .pt-bar-right {
+          animation: bar-right-anim 0.95s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        }
+
+        .pt-text {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 900;
+          font-size: 3rem;
+          color: #ffffff;
+          line-height: 1;
+          letter-spacing: 0.05em;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 0;
+          opacity: 0;
+          animation: text-reveal-anim 0.95s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+          text-shadow: 0 0 15px rgba(0, 255, 223, 0.35);
+        }
+
+        @keyframes bar-left-anim {
+          0% { transform: translateX(-120px); opacity: 0; }
+          20% { transform: translateX(0); opacity: 1; }
+          30% { transform: translateX(0); }
+          70%, 100% { transform: translateX(-95px); opacity: 1; }
+        }
+
+        @keyframes bar-right-anim {
+          0% { transform: translateX(120px); opacity: 0; }
+          20% { transform: translateX(0); opacity: 1; }
+          30% { transform: translateX(0); }
+          70%, 100% { transform: translateX(95px); opacity: 1; }
+        }
+
+        @keyframes text-reveal-anim {
+          0%, 30% { width: 0; opacity: 0; }
+          70%, 100% { width: 170px; opacity: 1; }
+        }
+      `}</style>
+
       {/* Left panel */}
       <div
         style={{
@@ -115,39 +171,21 @@ export default function PageTransition() {
         }}
       />
 
-      {/* Centre logo — visible only while fully closed */}
+      {/* Center Logo Shutter Animation */}
       <div
+        className="pt-logo-wrapper"
         style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "0.4rem",
           opacity: isClosed ? 1 : 0,
-          transition: `opacity 0.15s ease ${isClosed ? "0.05s" : "0s"}`,
-          pointerEvents: "none",
+          transition: `opacity 0.1s ease ${isClosed ? "0.05s" : "0s"}`,
         }}
       >
-        <svg viewBox="0 0 200 60" width="100" height="30" xmlns="http://www.w3.org/2000/svg">
-          <text
-            x="5" y="42"
-            fontFamily="'Space Grotesk', sans-serif"
-            fontWeight="900"
-            fontSize="38"
-            fill="none"
-            stroke="#00FFDF"
-            strokeWidth="1.4"
-            letterSpacing="2"
-          >
-            MNTC
-          </text>
-        </svg>
-        <div style={{
-          width: "36px", height: "1px",
-          background: "linear-gradient(90deg, transparent, #00FFDF80, transparent)",
-        }} />
+        {isClosed && (
+          <div className="pt-logo-inner">
+            <span className="pt-bar pt-bar-left">I</span>
+            <span className="pt-text">MNTC</span>
+            <span className="pt-bar pt-bar-right">I</span>
+          </div>
+        )}
       </div>
     </div>
   );

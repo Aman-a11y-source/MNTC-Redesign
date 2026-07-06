@@ -1,104 +1,98 @@
 "use client";
 
+import React from "react";
+
 /**
- * FloatingTextBg — v4
+ * FloatingTextBg (Hero Horizontal & Margins Vertical Columns)
  *
- * Horizontal rows : full viewport width, very muted — unchanged
- * Vertical columns: ONLY inside the right ~55% zone (the red-box area in the screenshot)
- *                   3 columns inside that zone — left UP · middle DOWN · right UP
+ * Horizontal scrolling background:
+ *  - exactly 3 rows in the Hero Section.
+ *  - progressively more muted downwards (top: 9% opacity, middle: 5% opacity, bottom: 2% opacity).
+ * Vertical side columns (Left Cyan scrolling UP, Right Purple scrolling DOWN):
+ *  - 90-degree rotated style framing the margins.
+ *  - Spans the full height of the landing page.
  */
 
-/* ── Horizontal rows (full width, untouched) ───────────────────────── */
-const H_ROWS = [
-  {
-    text: "MATRIX • DARWINIA • KRYPTIC • IDEATHON 2.0 • CAMPUS SUDOKU • MERGERS & ACQUISITIONS • AAROHAN • GD WORKSHOP • PORTFOLIO MANAGEMENT • ",
-    dur: 55, dir: 1,  top: "6%",  size: "4.8rem", opacity: 0.030,
-  },
-  {
-    text: "MATHS N TECH CLUB • NITDGP • CODE • DESIGN • LOGIC • ALGORITHMS • DATA STRUCTURES • CALL OUT SHERLOCK • TERRORIST TAKEDOWN • FINANCE • ",
-    dur: 38, dir: -1, top: "24%", size: "3.2rem", opacity: 0.022,
-  },
-  {
-    text: "CRYPTOGRAPHY • STATISTICS • PROBABILITY • QUANTITATIVE ANALYSIS • LINEAR ALGEBRA • NUMBER THEORY • COMBINATORICS • ",
-    dur: 62, dir: 1,  top: "43%", size: "5.2rem", opacity: 0.026,
-  },
-  {
-    text: "DARWINIA • KRYPTIC • MATRIX • IDEATHON • AAROHAN • GD WORKSHOP • MERGERS • CAMPUS SUDOKU • CALL OUT SHERLOCK • ",
-    dur: 44, dir: -1, top: "62%", size: "3rem",   opacity: 0.018,
-  },
-  {
-    text: "ALGORITHMS • DATA • DESIGN • LOGIC • STATISTICS • PORTFOLIO • FINANCE • STOCK MARKET • MATHEMATICS • ",
-    dur: 70, dir: 1,  top: "81%", size: "4.2rem", opacity: 0.024,
-  },
+const PHRASES = [
+  "MATRIX • DARWINIA • KRYPTIC • IDEATHON 2.0 • CAMPUS SUDOKU • MERGERS & ACQUISITIONS • ",
+  "MATHS N TECH CLUB • NITDGP • CODE • DESIGN • LOGIC • ALGORITHMS • DATA STRUCTURES • ",
+  "CRYPTOGRAPHY • STATISTICS • PROBABILITY • QUANTITATIVE ANALYSIS • LINEAR ALGEBRA • ",
 ];
 
-/* ── 3 vertical columns — positioned WITHIN the right zone ─────────── */
-/* These percentages are relative to the zone container (not the viewport) */
-const V_COLS = [
-  {
-    id: "vleft",
-    words: ["MATRIX", "DARWINIA", "KRYPTIC", "IDEATHON", "CAMPUS SUDOKU", "AAROHAN"],
-    dur: 24, dir: "up" as const,
-    left: "2%", width: "31%",
-    color: "#00FFDF", opacity: 0.20, size: "3rem",
-  },
-  {
-    id: "vmid",
-    words: ["MERGERS", "FINANCE", "PORTFOLIO", "GD WORKSHOP", "STOCK MARKET", "IDEATION"],
-    dur: 20, dir: "down" as const,
-    left: "35%", width: "31%",
-    color: "#7C3AED", opacity: 0.24, size: "3rem",
-  },
-  {
-    id: "vright",
-    words: ["MATHS", "CODE", "DESIGN", "LOGIC", "ALGORITHMS", "THEORY", "NITDGP"],
-    dur: 28, dir: "up" as const,
-    left: "68%", width: "31%",
-    color: "#00FFDF", opacity: 0.18, size: "3rem",
-  },
+const LEFT_WORDS = [
+  "MATRIX", "DARWINIA", "KRYPTIC", "IDEATHON", "AAROHAN", "CAMPUS SUDOKU",
+  "MATHS", "CODE", "DESIGN", "LOGIC", "ALGORITHMS", "THEORY", "NITDGP",
+  "MERGERS", "FINANCE", "PORTFOLIO", "GD WORKSHOP", "STOCK MARKET", "IDEATION"
+];
+
+const RIGHT_WORDS = [
+  "MATHS", "CODE", "DESIGN", "LOGIC", "ALGORITHMS", "THEORY", "NITDGP",
+  "MERGERS", "FINANCE", "PORTFOLIO", "GD WORKSHOP", "STOCK MARKET", "IDEATION",
+  "MATRIX", "DARWINIA", "KRYPTIC", "IDEATHON", "AAROHAN", "CAMPUS SUDOKU"
 ];
 
 export default function FloatingTextBg() {
+  const repeatedLeft = [...LEFT_WORDS, ...LEFT_WORDS, ...LEFT_WORDS];
+  const repeatedRight = [...RIGHT_WORDS, ...RIGHT_WORDS, ...RIGHT_WORDS];
+
+  // Exactly 3 horizontal rows for the Hero section, progressively fading downwards
+  const hRows = [
+    { top: "15%", dir: 1,  phrase: PHRASES[0], dur: 45, size: "4.5rem", opacity: 0.08 },
+    { top: "45%", dir: -1, phrase: PHRASES[1], dur: 38, size: "3.6rem", opacity: 0.045 },
+    { top: "72%", dir: 1,  phrase: PHRASES[2], dur: 52, size: "3rem",   opacity: 0.02 },
+  ];
+
   return (
     <>
       <style>{`
-        @keyframes ftb-l { from { transform:translateX(0);    } to { transform:translateX(-50%);  } }
-        @keyframes ftb-r { from { transform:translateX(-50%); } to { transform:translateX(0);     } }
-        .ftb-h { display:flex; white-space:nowrap; will-change:transform; }
-        .ftb-h.go-l { animation: ftb-l linear infinite; }
-        .ftb-h.go-r { animation: ftb-r linear infinite; }
+        /* Horizontal scrolling animations */
+        @keyframes h-scroll-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes h-scroll-r { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-        @keyframes ftb-u { from { transform:translateY(0);    } to { transform:translateY(-50%);  } }
-        @keyframes ftb-d { from { transform:translateY(-50%); } to { transform:translateY(0);     } }
-        .ftb-v { display:flex; flex-direction:column; will-change:transform; }
-        .ftb-v.go-u { animation: ftb-u linear infinite; }
-        .ftb-v.go-d { animation: ftb-d linear infinite; }
+        .h-track {
+          display: flex;
+          white-space: nowrap;
+          will-change: transform;
+        }
+        .h-track.go-l { animation: h-scroll-l linear infinite; }
+        .h-track.go-r { animation: h-scroll-r linear infinite; }
 
-        .ftb-v-word {
+        /* Vertical scrolling animations */
+        @keyframes v-scroll-u { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+        @keyframes v-scroll-d { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+
+        .v-track {
+          display: flex;
+          flex-direction: column;
+          will-change: transform;
+        }
+        .v-track.go-u { animation: v-scroll-u 55s linear infinite; }
+        .v-track.go-d { animation: v-scroll-d 48s linear infinite; }
+
+        .v-word {
           display: block;
           white-space: nowrap;
-          line-height: 1.2;
-          padding: 0.3em 0;
+          line-height: 1.3;
+          padding: 0.4em 0;
           font-weight: 900;
           font-family: 'Space Grotesk', sans-serif;
           text-transform: uppercase;
-          letter-spacing: 0.03em;
+          letter-spacing: 0.05em;
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          transform: rotate(180deg);
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .ftb-h, .ftb-v { animation: none !important; }
+          .h-track, .v-track { animation: none !important; }
         }
 
-        /* collapse middle+right vertical cols on small screens */
-        @media (max-width: 480px) {
-          .ftb-vcol-vmid, .ftb-vcol-vright { display: none; }
-        }
-        @media (max-width: 768px) {
-          .ftb-vcol-vright { display: none; }
+        /* Hide vertical margin text on smaller tablets/mobile screens */
+        @media (max-width: 1100px) {
+          .v-col-left, .v-col-right { display: none; }
         }
       `}</style>
 
-      {/* Root wrapper — fills the hero container */}
       <div
         aria-hidden="true"
         style={{
@@ -110,79 +104,93 @@ export default function FloatingTextBg() {
           userSelect: "none",
         }}
       >
-        {/* ── Horizontal rows (full width) ──────────────────────── */}
-        {H_ROWS.map((row, i) => (
-          <div
-            key={`h${i}`}
-            style={{ position: "absolute", top: row.top, left: 0, right: 0, overflow: "hidden" }}
-          >
+        {/* ── Layer 1: Exactly 3 Horizontal rows for the Hero, fading downwards ── */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100vh", overflow: "hidden" }}>
+          {hRows.map((row, i) => (
             <div
-              className={`ftb-h ${row.dir === 1 ? "go-l" : "go-r"}`}
+              key={`h${i}`}
               style={{
-                animationDuration: `${row.dur}s`,
-                fontSize: row.size,
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 900,
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                color: "#ffffff",
-                opacity: row.opacity,
-                lineHeight: 1,
+                position: "absolute",
+                top: row.top,
+                left: 0,
+                right: 0,
+                overflow: "hidden",
               }}
             >
-              <span>{row.text}{row.text}</span>
+              <div
+                className={`h-track ${row.dir === 1 ? "go-l" : "go-r"}`}
+                style={{
+                  animationDuration: `${row.dur}s`,
+                  fontSize: row.size,
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 900,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  color: "#ffffff",
+                  opacity: row.opacity,
+                  lineHeight: 1,
+                }}
+              >
+                <span>{row.phrase.repeat(6)}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
-        {/*
-          ── Vertical columns zone ──────────────────────────────────
-          This box occupies only the RIGHT portion of the hero
-          (matching the red-boxed area in the screenshot).
-          All 3 columns are positioned relative to this zone.
-        */}
+        {/* ── Layer 2: Vertical Left Column (Cyan, scrolls UP) ── */}
         <div
+          className="v-col-left"
           style={{
             position: "absolute",
             top: 0,
             bottom: 0,
-            /* starts at ~45% from the left — right of the title text */
-            left: "45%",
-            right: 0,
+            left: "1.5%",
+            width: "60px",
+            display: "flex",
+            justifyContent: "center",
             overflow: "hidden",
           }}
         >
-          {V_COLS.map((col) => {
-            const repeated = [...col.words, ...col.words];
-            return (
-              <div
-                key={col.id}
-                className={`ftb-vcol-${col.id}`}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  bottom: 0,
-                  left: col.left,
-                  width: col.width,
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  className={`ftb-v ${col.dir === "up" ? "go-u" : "go-d"}`}
-                  style={{
-                    animationDuration: `${col.dur}s`,
-                    color: col.color,
-                    opacity: col.opacity,
-                    fontSize: col.size,
-                  }}
-                >
-                  {repeated.map((word, wi) => (
-                    <span key={wi} className="ftb-v-word">{word}</span>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+          <div
+            className="v-track go-u"
+            style={{
+              color: "#00FFDF",
+              opacity: 0.16,
+              fontSize: "2.4rem",
+            }}
+          >
+            {repeatedLeft.map((word, idx) => (
+              <span key={idx} className="v-word">{word}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Layer 3: Vertical Right Column (Purple, scrolls DOWN) ── */}
+        <div
+          className="v-col-right"
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            right: "1.5%",
+            width: "60px",
+            display: "flex",
+            justifyContent: "center",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            className="v-track go-d"
+            style={{
+              color: "#7C3AED",
+              opacity: 0.20,
+              fontSize: "2.4rem",
+            }}
+          >
+            {repeatedRight.map((word, idx) => (
+              <span key={idx} className="v-word">{word}</span>
+            ))}
+          </div>
         </div>
       </div>
     </>

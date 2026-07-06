@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ScrollReveal from "./components/ScrollReveal";
 import ChromaGrid from "./components/ChromaGrid";
 import FloatingTextBg from "./components/FloatingTextBg";
+import TextMarqueeBelt from "./components/TextMarqueeBelt";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -187,6 +188,7 @@ export default function Home() {
 
   return (
     <div className="relative text-white min-h-screen w-full overflow-hidden bg-[#08070d] pb-24">
+      <FloatingTextBg />
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#7C3AED] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none animate-pulse"></div>
@@ -194,7 +196,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="relative w-full overflow-hidden bg-transparent" style={{ minHeight: 'calc(100vh - 80px)' }}>
-        <FloatingTextBg />
         <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-80px)] px-6 lg:px-12 py-8 max-w-7xl mx-auto z-10 select-none gap-10 lg:gap-16">
           
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left justify-center w-full z-10">
@@ -227,6 +228,8 @@ export default function Home() {
 
         </section>
       </div>
+
+      <TextMarqueeBelt dir={1} dur={36} color="#00FFDF" opacity={0.06} />
 
       {/* Section 2: Who are We? */}
       <section className="relative max-w-7xl mx-auto px-6 py-12 md:py-20 z-10 sec2-container">
@@ -285,6 +288,8 @@ export default function Home() {
         </div>
       </section>
 
+      <TextMarqueeBelt dir={-1} dur={42} color="#7C3AED" opacity={0.06} />
+
       {/* Section 3: Meet the Team */}
       <section className="relative max-w-7xl mx-auto px-6 py-12 md:py-20 z-10 sec3-container">
         <div className="glass-panel p-8 md:p-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
@@ -331,6 +336,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <TextMarqueeBelt dir={1} dur={30} color="#00FFDF" opacity={0.06} />
 
       {/* Section 4: Horizontal Scroll Domains Showcase */}
       <div ref={pinRef} className="relative w-full overflow-hidden bg-[#07060b] border-y border-white/5">
@@ -389,6 +396,8 @@ export default function Home() {
 
         </div>
       </div>
+
+      <TextMarqueeBelt dir={-1} dur={38} color="#7C3AED" opacity={0.06} />
 
       {/* Section 5: Zigzag Major Events Section */}
       <section className="relative max-w-7xl mx-auto px-6 py-16 md:py-28 z-10">
@@ -513,6 +522,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <TextMarqueeBelt dir={1} dur={34} color="#00FFDF" opacity={0.06} />
 
       {/* Section 6: Club Gallery — ChromaGrid Memories */}
       <section className="relative max-w-7xl mx-auto px-6 py-16 md:py-24 z-10">
