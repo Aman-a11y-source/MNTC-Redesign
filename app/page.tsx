@@ -531,7 +531,7 @@ export default function Home() {
           <span className="text-xs font-bold tracking-widest text-[#7C3AED] uppercase bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20">MEMORIES</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-space-grotesk text-white mt-4 uppercase">Club Gallery</h2>
           <p className="text-gray-400 mt-4 text-base max-w-xl mx-auto">
-            Real moments, real people — hover to bring memories to life.
+            Real moments, real people.
           </p>
         </div>
 
@@ -554,45 +554,30 @@ export default function Home() {
             ease="power3.out"
             items={[
               {
-                image: '/images/memories/memory1.jpg',
-                title: 'Seniors Farewell',
-                subtitle: 'Class of 2024',
-                handle: '@mntcnitdgp',
+                image: '/images/memories/memory1.jpeg',
                 borderColor: '#00FFDF',
                 gradient: 'linear-gradient(145deg, #00FFDF22, #08070d)',
               },
               {
-                image: '/images/memories/memory2.jpg',
-                title: 'Freshers Orientation',
-                subtitle: 'Welcome Batch 2027',
-                handle: '@mntcnitdgp',
+                image: '/images/memories/memory2.jpeg',
                 borderColor: '#7C3AED',
                 gradient: 'linear-gradient(210deg, #7C3AED22, #08070d)',
               },
               {
-                image: '/images/memories/memory3.jpg',
-                title: 'Aarohan Fest',
-                subtitle: 'Organizing Committee',
-                handle: '@mntcnitdgp',
-                borderColor: '#F59E0B',
+                image: '/images/memories/memory3.jpeg',                borderColor: '#F59E0B',
                 gradient: 'linear-gradient(165deg, #F59E0B22, #08070d)',
               },
               {
-                image: '/images/memories/memory4.jpg',
-                title: 'Core Team Meet',
-                subtitle: 'Session Planning',
-                handle: '@mntcnitdgp',
+                image: '/images/memories/memory4.jpeg',
                 borderColor: '#8B5CF6',
                 gradient: 'linear-gradient(225deg, #8B5CF622, #08070d)',
               },
               {
-                image: '/images/memories/memory5.jpg',
-                title: 'Alumni Gathering',
-                subtitle: 'Networking Meet',
-                handle: '@mntcnitdgp',
+                image: '/images/memories/memory5.jpeg',
                 borderColor: '#06B6D4',
                 gradient: 'linear-gradient(135deg, #06B6D422, #08070d)',
               },
+              
             ]}
           />
         </div>
