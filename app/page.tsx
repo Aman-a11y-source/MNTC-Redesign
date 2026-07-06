@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import ScrollReveal from "./components/ScrollReveal";
-import ChromaGrid from "./components/ChromaGrid";
+import OliverParallax from "./components/OliverParallax";
 import FloatingTextBg from "./components/FloatingTextBg";
 import TextMarqueeBelt from "./components/TextMarqueeBelt";
 import { gsap } from "gsap";
@@ -525,63 +525,8 @@ export default function Home() {
 
       <TextMarqueeBelt dir={1} dur={34} color="#00FFDF" opacity={0.06} />
 
-      {/* Section 6: Club Gallery — ChromaGrid Memories */}
-      <section className="relative max-w-7xl mx-auto px-6 py-16 md:py-24 z-10">
-        <div className="text-center mb-16">
-          <span className="text-xs font-bold tracking-widest text-[#7C3AED] uppercase bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20">MEMORIES</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-space-grotesk text-white mt-4 uppercase">Club Gallery</h2>
-          <p className="text-gray-400 mt-4 text-base max-w-xl mx-auto">
-            Real moments, real people.
-          </p>
-        </div>
-
-        {/*
-          ╔══════════════════════════════════════════════════════════════╗
-          ║  📸  TO UPDATE GALLERY PHOTOS:                              ║
-          ║  Drop your JPG/PNG files into:                              ║
-          ║    public/images/memories/                                  ║
-          ║  File names:  memory1.jpg → memory6.jpg                    ║
-          ║  Recommended size:  800×600px or larger, 4:3 ratio         ║
-          ╚══════════════════════════════════════════════════════════════╝
-        */}
-
-        {/* ChromaGrid: desktop shows grayscale-to-colour hover, mobile is plain colour grid */}
-        <div style={{ height: 'auto', minHeight: '640px', position: 'relative' }}>
-          <ChromaGrid
-            radius={320}
-            damping={0.45}
-            fadeOut={0.6}
-            ease="power3.out"
-            items={[
-              {
-                image: '/images/memories/memory1.jpeg',
-                borderColor: '#00FFDF',
-                gradient: 'linear-gradient(145deg, #00FFDF22, #08070d)',
-              },
-              {
-                image: '/images/memories/memory2.jpeg',
-                borderColor: '#7C3AED',
-                gradient: 'linear-gradient(210deg, #7C3AED22, #08070d)',
-              },
-              {
-                image: '/images/memories/memory3.jpeg',                borderColor: '#F59E0B',
-                gradient: 'linear-gradient(165deg, #F59E0B22, #08070d)',
-              },
-              {
-                image: '/images/memories/memory4.jpeg',
-                borderColor: '#8B5CF6',
-                gradient: 'linear-gradient(225deg, #8B5CF622, #08070d)',
-              },
-              {
-                image: '/images/memories/memory5.jpeg',
-                borderColor: '#06B6D4',
-                gradient: 'linear-gradient(135deg, #06B6D422, #08070d)',
-              },
-              
-            ]}
-          />
-        </div>
-      </section>
+      {/* Section 6: Club Gallery — Oliver Parallax Grid */}
+      <OliverParallax />
 
       {/* Decorative Bottom Design */}
       <div className="relative w-full h-40 opacity-10 pointer-events-none mt-12 flex justify-end">
