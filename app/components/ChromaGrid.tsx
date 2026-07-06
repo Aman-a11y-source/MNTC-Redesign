@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './ChromaGrid.css';
 
-interface ChromaItem {
+export interface ChromaItem {
   image: string;
   title: string;
   subtitle: string;
@@ -38,8 +38,8 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
 }) => {
   const rootRef = useRef<HTMLDivElement>(null);
   const fadeRef = useRef<HTMLDivElement>(null);
-  const setX = useRef<((value: number) => void) | null>(null);
-  const setY = useRef<((value: number) => void) | null>(null);
+  const setX = useRef<any>(null);
+  const setY = useRef<any>(null);
   const pos = useRef({ x: 0, y: 0 });
 
   const demo: ChromaItem[] = [
