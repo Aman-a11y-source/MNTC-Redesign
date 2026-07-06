@@ -51,18 +51,36 @@ export default function Home() {
 
       <div className="relative w-full overflow-hidden bg-transparent">
         <DotGrid hoverColor="#00FFDF" hoverRadius={120} />
-        <section className="relative flex flex-col items-center justify-center min-h-[85vh] px-6 max-w-7xl mx-auto z-10 select-none">
-          <div className="text-center">
-            <div className="relative font-space-grotesk tracking-tighter leading-none select-none" style={{ fontSize: 'min(18vw, 150px)', fontWeight: 900 }}>
-              <span className="text-white">M</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFDF] to-[#00aa9a] neon-glow-cyan">N</span>
-              <span className="text-white">TC</span>
-            </div>
-            <div className="mt-4 font-mono tracking-widest text-[#00FFDF] uppercase flex items-center justify-center gap-1" style={{ fontSize: 'min(4vw, 22px)', fontWeight: 600 }}>
+        <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-80px)] px-6 lg:px-12 py-8 max-w-7xl mx-auto z-10 select-none gap-10 lg:gap-16">
+          
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left justify-center w-full z-10">
+            <h1 className="font-space-grotesk tracking-tight leading-[0.95] font-black text-white text-5xl sm:text-6xl lg:text-8xl xl:text-9xl uppercase select-none">
+              <div>Maths</div>
+              <div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFDF] to-[#00aa9a] neon-glow-cyan">N</span>
+                {' '}Tech
+              </div>
+              <div>Club</div>
+            </h1>
+            <div className="mt-4 font-mono tracking-widest text-[#00FFDF] uppercase flex items-center justify-center lg:justify-start gap-1 text-sm sm:text-base lg:text-lg xl:text-xl font-bold">
               <span>{text}</span>
               <span className="animate-blink font-light">|</span>
             </div>
           </div>
+
+          <div className="flex-1 flex justify-center items-center w-full z-10">
+            <div className="relative max-w-[260px] sm:max-w-[320px] lg:max-w-[460px] w-full flex justify-center transform hover:scale-[1.03] transition-transform duration-500 aspect-[721/751]">
+              <Image 
+                width={420} 
+                height={440} 
+                src="/images/maths.svg" 
+                alt="Maths N Tech Club Illustration" 
+                className="w-full h-auto object-contain" 
+                priority
+              />
+            </div>
+          </div>
+
         </section>
       </div>
 
@@ -103,17 +121,14 @@ export default function Home() {
           </div>
 
           <div className="flex-1 flex flex-col items-center justify-center z-10 gap-8">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#00FFDF] to-[#7C3AED] rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative px-8 py-10 bg-[#0e0d19]/95 rounded-3xl border border-white/5 flex justify-center items-center">
-                <Image 
-                  width={300} 
-                  height={300} 
-                  src="/home/question vector.png" 
-                  alt="Who are we illustration" 
-                  className="w-64 md:w-80 h-auto object-contain transform group-hover:scale-[1.05] transition-transform duration-500" 
-                />
-              </div>
+            <div className="relative w-full flex justify-center transform hover:scale-[1.03] transition-transform duration-500 max-w-[260px] sm:max-w-[320px] lg:max-w-[380px]">
+              <Image 
+                width={300} 
+                height={300} 
+                src="/home/question vector.png" 
+                alt="Who are we illustration" 
+                className="w-full h-auto object-contain" 
+              />
             </div>
             
             <a 
@@ -132,17 +147,14 @@ export default function Home() {
         <div className="glass-panel p-8 md:p-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
           
           <div className="flex-1 flex flex-col items-center justify-center z-10 gap-8">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#7C3AED] to-[#00FFDF] rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative px-8 py-10 bg-[#0e0d19]/95 rounded-3xl border border-white/5 flex justify-center items-center">
-                <Image 
-                  width={400} 
-                  height={300}
-                  src="/home/team.png"
-                  alt="People with graph illustration"
-                  className="w-72 md:w-96 h-auto object-contain transform group-hover:scale-[1.05] transition-transform duration-500"
-                />
-              </div>
+            <div className="relative w-full flex justify-center transform hover:scale-[1.03] transition-transform duration-500 max-w-[280px] sm:max-w-[340px] lg:max-w-[420px]">
+              <Image 
+                width={400} 
+                height={300}
+                src="/home/team.png"
+                alt="People with graph illustration"
+                className="w-full h-auto object-contain"
+              />
             </div>
 
             <a 

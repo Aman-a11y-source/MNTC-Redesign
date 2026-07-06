@@ -20,8 +20,8 @@
   align-items: center;
   padding: 0 40px;
   z-index: 1010;
-  pointer-events: none;
-  background: transparent;
+  pointer-events: auto;
+  background: #08070d;
 }
 
 @media (max-width: 768px) {
