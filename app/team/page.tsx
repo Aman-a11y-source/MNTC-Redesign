@@ -42,7 +42,11 @@ export default function TeamPage() {
     return selectedCategory.members.map((m, idx) => {
       const color = borderColors[idx % borderColors.length];
       return {
-        image: m.avatar.startsWith("http") ? m.avatar : `https://mntcnitdgp.co.in${m.avatar}`,
+        image: m.avatar.startsWith("http") 
+          ? m.avatar 
+          : m.avatar.startsWith("/images/member images") 
+            ? `https://mntcnitdgp.co.in${m.avatar}` 
+            : m.avatar,
         title: m.name,
         subtitle: m.position,
         borderColor: color,

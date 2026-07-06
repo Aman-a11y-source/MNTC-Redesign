@@ -139,6 +139,12 @@ export const teamData: Record<string, TeamCategory> = {
         avatar: "/images/member images/year 1/arpita.jpg",
         position: "Graphic Designing",
       },
+      {
+        id: 14,
+        name: "Aman Brahma",
+        avatar: "/images/member images/year 1/aman.jpg",
+        position: "Web Developer",
+      }
     ]
   },
   thirdYear: {
